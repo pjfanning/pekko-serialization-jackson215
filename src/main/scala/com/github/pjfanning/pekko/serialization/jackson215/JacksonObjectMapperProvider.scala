@@ -235,7 +235,7 @@ object JacksonObjectMapperProvider extends ExtensionId[JacksonObjectMapperProvid
                   e,
                   s"Could not load configured Jackson module [$fqcn], " +
                   "please verify classpath dependencies or amend the configuration " +
-                  "[pekko.serialization.jackson-modules]. Continuing without this module."))
+                  "[pekko.serialization.jackson215.jackson-modules]. Continuing without this module."))
               None
           }
         } else
@@ -306,7 +306,7 @@ object JacksonObjectMapperProvider extends ExtensionId[JacksonObjectMapperProvid
 }
 
 /**
- * Registry of shared `ObjectMapper` instances, each with it's unique `bindingName`.
+ * Registry of shared `ObjectMapper` instances, each with its unique `bindingName`.
  */
 final class JacksonObjectMapperProvider(system: ExtendedActorSystem) extends Extension {
   private val objectMappers = new ConcurrentHashMap[String, ObjectMapper]
