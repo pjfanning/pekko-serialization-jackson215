@@ -11,7 +11,7 @@
  * Copyright (C) 2019-2022 Lightbend Inc. <https://www.lightbend.com>
  */
 
-package com.github.pjfanning.pekko.serialization.jackson
+package com.github.pjfanning.pekko.serialization.jackson215
 
 // FIXME maybe move many things to `com.github.pjfanning.pekko.serialization.jackson215.internal` package?
 
@@ -30,21 +30,21 @@ import pekko.annotation.InternalApi
 /**
  * INTERNAL API: Adds support for serializing and deserializing [[ActorRef]].
  */
-@InternalApi private[jackson] trait ActorRefModule extends JacksonModule {
+@InternalApi private[jackson215] trait ActorRefModule extends JacksonModule {
   addSerializer(classOf[ActorRef], () => ActorRefSerializer.instance, () => ActorRefDeserializer.instance)
 }
 
 /**
  * INTERNAL API
  */
-@InternalApi private[jackson] object ActorRefSerializer {
+@InternalApi private[jackson215] object ActorRefSerializer {
   val instance: ActorRefSerializer = new ActorRefSerializer
 }
 
 /**
  * INTERNAL API
  */
-@InternalApi private[jackson] class ActorRefSerializer
+@InternalApi private[jackson215] class ActorRefSerializer
     extends StdScalarSerializer[ActorRef](classOf[ActorRef])
     with ActorSystemAccess {
   override def serialize(value: ActorRef, jgen: JsonGenerator, provider: SerializerProvider): Unit = {
@@ -56,14 +56,14 @@ import pekko.annotation.InternalApi
 /**
  * INTERNAL API
  */
-@InternalApi private[jackson] object ActorRefDeserializer {
+@InternalApi private[jackson215] object ActorRefDeserializer {
   val instance: ActorRefDeserializer = new ActorRefDeserializer
 }
 
 /**
  * INTERNAL API
  */
-@InternalApi private[jackson] class ActorRefDeserializer
+@InternalApi private[jackson215] class ActorRefDeserializer
     extends StdScalarDeserializer[ActorRef](classOf[ActorRef])
     with ActorSystemAccess {
 

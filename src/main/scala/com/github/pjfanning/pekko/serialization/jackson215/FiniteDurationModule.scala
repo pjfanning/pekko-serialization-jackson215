@@ -11,7 +11,7 @@
  * Copyright (C) 2019-2022 Lightbend Inc. <https://www.lightbend.com>
  */
 
-package com.github.pjfanning.pekko.serialization.jackson
+package com.github.pjfanning.pekko.serialization.jackson215
 
 import scala.concurrent.duration.FiniteDuration
 
@@ -31,7 +31,7 @@ import JavaDurationConverters._
 /**
  * INTERNAL API: Adds support for serializing and deserializing [[FiniteDuration]].
  */
-@InternalApi private[jackson] trait FiniteDurationModule extends JacksonModule {
+@InternalApi private[jackson215] trait FiniteDurationModule extends JacksonModule {
   addSerializer(
     classOf[FiniteDuration],
     () => FiniteDurationSerializer.instance,
@@ -41,14 +41,14 @@ import JavaDurationConverters._
 /**
  * INTERNAL API
  */
-@InternalApi private[jackson] object FiniteDurationSerializer {
+@InternalApi private[jackson215] object FiniteDurationSerializer {
   val instance: FiniteDurationSerializer = new FiniteDurationSerializer
 }
 
 /**
  * INTERNAL API: Delegates to DurationSerializer in `jackson-modules-java8`
  */
-@InternalApi private[jackson] class FiniteDurationSerializer
+@InternalApi private[jackson215] class FiniteDurationSerializer
     extends StdScalarSerializer[FiniteDuration](classOf[FiniteDuration]) {
   override def serialize(value: FiniteDuration, jgen: JsonGenerator, provider: SerializerProvider): Unit = {
     DurationSerializer.INSTANCE.serialize(value.asJava, jgen, provider)
@@ -58,14 +58,14 @@ import JavaDurationConverters._
 /**
  * INTERNAL API
  */
-@InternalApi private[jackson] object FiniteDurationDeserializer {
+@InternalApi private[jackson215] object FiniteDurationDeserializer {
   val instance: FiniteDurationDeserializer = new FiniteDurationDeserializer
 }
 
 /**
  * INTERNAL API: Delegates to DurationDeserializer in `jackson-modules-java8`
  */
-@InternalApi private[jackson] class FiniteDurationDeserializer
+@InternalApi private[jackson215] class FiniteDurationDeserializer
     extends StdScalarDeserializer[FiniteDuration](classOf[FiniteDuration]) {
 
   def deserialize(jp: JsonParser, ctxt: DeserializationContext): FiniteDuration = {

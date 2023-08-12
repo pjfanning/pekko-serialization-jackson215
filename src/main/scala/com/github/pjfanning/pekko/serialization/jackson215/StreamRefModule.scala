@@ -11,7 +11,7 @@
  * Copyright (C) 2009-2022 Lightbend Inc. <https://www.lightbend.com>
  */
 
-package com.github.pjfanning.pekko.serialization.jackson
+package com.github.pjfanning.pekko.serialization.jackson215
 
 // FIXME maybe move many things to `com.github.pjfanning.pekko.serialization.jackson215.internal` package?
 
@@ -32,7 +32,7 @@ import pekko.stream.StreamRefResolver
 /**
  * INTERNAL API: Adds support for serializing and deserializing [[pekko.stream.SourceRef]] and [[pekko.stream.SinkRef]].
  */
-@InternalApi private[jackson] trait StreamRefModule extends JacksonModule {
+@InternalApi private[jackson215] trait StreamRefModule extends JacksonModule {
   addSerializer(classOf[SourceRef[_]], () => SourceRefSerializer.instance, () => SourceRefDeserializer.instance)
   addSerializer(classOf[SinkRef[_]], () => SinkRefSerializer.instance, () => SinkRefDeserializer.instance)
 }
@@ -40,14 +40,14 @@ import pekko.stream.StreamRefResolver
 /**
  * INTERNAL API
  */
-@InternalApi private[jackson] object SourceRefSerializer {
+@InternalApi private[jackson215] object SourceRefSerializer {
   val instance: SourceRefSerializer = new SourceRefSerializer
 }
 
 /**
  * INTERNAL API
  */
-@InternalApi private[jackson] class SourceRefSerializer
+@InternalApi private[jackson215] class SourceRefSerializer
     extends StdScalarSerializer[SourceRef[_]](classOf[SourceRef[_]])
     with ActorSystemAccess {
 
@@ -61,14 +61,14 @@ import pekko.stream.StreamRefResolver
 /**
  * INTERNAL API
  */
-@InternalApi private[jackson] object SourceRefDeserializer {
+@InternalApi private[jackson215] object SourceRefDeserializer {
   val instance: SourceRefDeserializer = new SourceRefDeserializer
 }
 
 /**
  * INTERNAL API
  */
-@InternalApi private[jackson] class SourceRefDeserializer
+@InternalApi private[jackson215] class SourceRefDeserializer
     extends StdScalarDeserializer[SourceRef[_]](classOf[SourceRef[_]])
     with ActorSystemAccess {
 
@@ -84,14 +84,14 @@ import pekko.stream.StreamRefResolver
 /**
  * INTERNAL API
  */
-@InternalApi private[jackson] object SinkRefSerializer {
+@InternalApi private[jackson215] object SinkRefSerializer {
   val instance: SinkRefSerializer = new SinkRefSerializer
 }
 
 /**
  * INTERNAL API
  */
-@InternalApi private[jackson] class SinkRefSerializer
+@InternalApi private[jackson215] class SinkRefSerializer
     extends StdScalarSerializer[SinkRef[_]](classOf[SinkRef[_]])
     with ActorSystemAccess {
 
@@ -105,14 +105,14 @@ import pekko.stream.StreamRefResolver
 /**
  * INTERNAL API
  */
-@InternalApi private[jackson] object SinkRefDeserializer {
+@InternalApi private[jackson215] object SinkRefDeserializer {
   val instance: SinkRefDeserializer = new SinkRefDeserializer
 }
 
 /**
  * INTERNAL API
  */
-@InternalApi private[jackson] class SinkRefDeserializer
+@InternalApi private[jackson215] class SinkRefDeserializer
     extends StdScalarDeserializer[SinkRef[_]](classOf[SinkRef[_]])
     with ActorSystemAccess {
 

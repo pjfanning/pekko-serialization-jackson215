@@ -11,7 +11,7 @@
  * Copyright (C) 2019-2022 Lightbend Inc. <https://www.lightbend.com>
  */
 
-package com.github.pjfanning.pekko.serialization.jackson
+package com.github.pjfanning.pekko.serialization.jackson215
 
 import com.fasterxml.jackson.core.{JsonGenerator, JsonParser, ObjectCodec}
 import com.fasterxml.jackson.databind.{DeserializationContext, JsonNode, SerializerProvider}

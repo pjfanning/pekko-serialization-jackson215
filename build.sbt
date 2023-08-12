@@ -19,11 +19,13 @@ lazy val root = (project in file("."))
       "com.fasterxml.jackson.core" % "jackson-databind" % jacksonVersion,
       "com.fasterxml.jackson.core" % "jackson-core" % jacksonVersion,
       "com.fasterxml.jackson.dataformat" % "jackson-dataformat-cbor" % jacksonVersion,
+      "com.fasterxml.jackson.datatype" % "jackson-datatype-jdk8" % jacksonVersion,
       "com.fasterxml.jackson.datatype" % "jackson-datatype-jsr310" % jacksonVersion,
       "com.fasterxml.jackson.module" % "jackson-module-parameter-names" % jacksonVersion,
       "com.fasterxml.jackson.module" %% "jackson-module-scala" % jacksonVersion,
       "org.lz4" % "lz4-java" % "1.8.0",
       "org.scala-lang.modules" %% "scala-java8-compat" % "1.0.2",
+      "org.apache.pekko" %% "pekko-testkit" % pekkoVersion % Test,
       "org.scalatest" %% "scalatest" % "3.2.16" % Test,
       "ch.qos.logback" % "logback-classic" % "1.2.12" % Test
     )

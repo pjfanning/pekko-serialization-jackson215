@@ -11,7 +11,7 @@
  * Copyright (C) 2016-2022 Lightbend Inc. <https://www.lightbend.com>
  */
 
-package com.github.pjfanning.pekko.serialization.jackson
+package com.github.pjfanning.pekko.serialization.jackson215
 
 import java.io.{ByteArrayInputStream, ByteArrayOutputStream, NotSerializableException}
 import java.nio.ByteBuffer
@@ -35,7 +35,7 @@ import pekko.util.Helpers.toRootLowerCase
 /**
  * INTERNAL API
  */
-@InternalApi private[jackson] object JacksonSerializer {
+@InternalApi private[jackson215] object JacksonSerializer {
 
   /**
    * Using the deny list from Jackson databind of class names that shouldn't be allowed.
@@ -142,7 +142,7 @@ import pekko.util.Helpers.toRootLowerCase
  *
  * Pekko serializer for Jackson with JSON.
  */
-@InternalApi private[jackson] final class JacksonJsonSerializer(system: ExtendedActorSystem, bindingName: String)
+@InternalApi private[jackson215] final class JacksonJsonSerializer(system: ExtendedActorSystem, bindingName: String)
     extends JacksonSerializer(
       system,
       bindingName: String,
@@ -153,7 +153,7 @@ import pekko.util.Helpers.toRootLowerCase
  *
  * Pekko serializer for Jackson with CBOR.
  */
-@InternalApi private[jackson] final class JacksonCborSerializer(system: ExtendedActorSystem, bindingName: String)
+@InternalApi private[jackson215] final class JacksonCborSerializer(system: ExtendedActorSystem, bindingName: String)
     extends JacksonSerializer(
       system,
       bindingName,
@@ -169,13 +169,13 @@ import pekko.util.Helpers.toRootLowerCase
 /**
  * INTERNAL API: Base class for Jackson serializers.
  *
- * Configuration in `pekko.serialization.jackson` section.
+ * Configuration in `pekko.serialization.jackson215` section.
  * It will load Jackson modules defined in configuration `jackson-modules`.
  *
  * It will compress the payload if the compression `algorithm` is enabled and the the
  * payload is larger than the configured `compress-larger-than` value.
  */
-@InternalApi private[jackson] abstract class JacksonSerializer(
+@InternalApi private[jackson215] abstract class JacksonSerializer(
     val system: ExtendedActorSystem,
     val bindingName: String,
     val objectMapper: ObjectMapper)
@@ -432,7 +432,7 @@ import pekko.util.Helpers.toRootLowerCase
       val warnMsg = s"Can't serialize/deserialize object of type [${clazz.getName}] in [${getClass.getName}]. " +
         "Only classes that are listed as allowed are allowed for security reasons. " +
         "Configure allowed classes with pekko.actor.serialization-bindings or " +
-        "pekko.serialization.jackson.allowed-class-prefix."
+        "pekko.serialization.jackson215.allowed-class-prefix."
       log.warning(warnMsg)
       throw new IllegalArgumentException(warnMsg)
     }
