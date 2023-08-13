@@ -7,3 +7,9 @@ The main reason to use Jackson 2.15 is for its [StreamReadConstraint](https://ww
 Config names for this library start with `pekko.serialization.jackson215` as opposed to `pekko.serialization.jackson`.
 
 If you want to use Jackson 2.15 with [Pekko HTTP](https://pekko.apache.org/docs/pekko-http/current), use [pekko-http-jackson](https://github.com/pjfanning/pekko-http-json) v2.1.0 instead.
+
+## sbt
+
+```
+libraryDependencies += "com.github.pjfanning" %% "pekko-serialization-jackson215" % "1.0.0"
+```
