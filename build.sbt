@@ -28,5 +28,6 @@ lazy val root = (project in file("."))
       "org.apache.pekko" %% "pekko-testkit" % pekkoVersion % Test,
       "org.scalatest" %% "scalatest" % "3.2.16" % Test,
       "ch.qos.logback" % "logback-classic" % "1.2.12" % Test
-    )
+    ),
+    javacOptions += "-parameters"
   )
