@@ -5,7 +5,7 @@ ThisBuild / scalaVersion := scala13Version
 ThisBuild / crossScalaVersions := Seq(scala12Version, scala13Version, scala3Version)
 
 val pekkoVersion = "1.0.1"
-val jacksonVersion = "2.15.2"
+val jacksonVersion = "2.15.3"
 
 lazy val root = (project in file("."))
   .settings(
@@ -25,7 +25,7 @@ lazy val root = (project in file("."))
       "org.lz4" % "lz4-java" % "1.8.0",
       "org.scala-lang.modules" %% "scala-java8-compat" % "1.0.2",
       "org.apache.pekko" %% "pekko-testkit" % pekkoVersion % Test,
-      "org.scalatest" %% "scalatest" % "3.2.16" % Test,
+      "org.scalatest" %% "scalatest" % "3.2.17" % Test,
       "ch.qos.logback" % "logback-classic" % "1.2.12" % Test
     ),
     javacOptions += "-parameters",
