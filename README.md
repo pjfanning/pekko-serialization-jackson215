@@ -1,6 +1,8 @@
 # pekko-serialization-jackson215
 
-Jackson 2.15 equivalent of [pekko-serialization-jackson](https://pekko.apache.org/docs/pekko/current/serialization-jackson.html) which uses Jackson 2.14.
+Jackson 2.15 equivalent of [pekko-serialization-jackson](https://pekko.apache.org/docs/pekko/current/serialization-jackson.html) which used to use Jackson 2.14.
+
+It is recommended that users just upgrade their pekko-serialization-jackson and other pekko jars to the latest version because they support newer versions of Jackson.
 
 See also https://github.com/pjfanning/pekko-serialization-jackson216
 
